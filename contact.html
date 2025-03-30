@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - FitLife Coach</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- AOS CSS for scroll animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Swiper CSS for modern sliders -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Additional styles specific to contact page */
+        .contact-info-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .contact-info-item:hover {
+            transform: translateX(5px);
+        }
+        
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-light), var(--primary-color));
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1.5rem;
+            font-size: 1.4rem;
+            flex-shrink: 0;
+            box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .contact-info-item:hover .contact-icon {
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(76, 175, 80, 0.4);
+        }
+        
+        .contact-form-container {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .contact-form-container.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .contact-form {
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 2.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact-form::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+        }
+        
+        .form-floating {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-floating > .form-control {
+            padding: 1.5rem 1rem;
+            height: calc(3.5rem + 2px);
+            border: 2px solid var(--gray-light);
+            border-radius: var(--border-radius);
+            transition: all 0.3s ease;
+        }
+        
+        .form-floating > textarea.form-control {
+            height: 150px;
+            resize: none;
+        }
+        
+        .form-floating > .form-control:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 15px rgba(76, 175, 80, 0.2);
+        }
+        
+        .form-floating > label {
+            padding: 1rem;
+            color: var(--gray-color);
+        }
+        
+        .form-floating > .form-control:focus ~ label,
+        .form-floating > .form-control:not(:placeholder-shown) ~ label {
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+        
+        .btn-submit {
+            padding: 0.8rem 2rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            transition: all 0.5s ease;
+        }
+        
+        .btn-submit::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color), var(--primary-color));
+            background-size: 200% 200%;
+            z-index: -1;
+            transition: all 0.5s ease;
+            opacity: 0;
+        }
+        
+        .btn-submit:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(76, 175, 80, 0.4);
+        }
+        
+        .btn-submit:hover::before {
+            opacity: 1;
+            animation: gradientShift 3s ease infinite;
+        }
+        
+        .map-container {
+            height: 450px;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            transition: all 0.3s ease;
+        }
+        
+        .map-container:hover {
+            box-shadow: var(--box-shadow-hover);
+            transform: translateY(-5px);
+        }
+        
+        .map-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        
+        .contact-success-message,
+        .contact-error-message {
+            display: none;
+            background-color: rgba(76, 175, 80, 0.1);
+            border-left: 4px solid var(--primary-color);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 1.5rem;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .contact-error-message {
+            background-color: rgba(244, 67, 54, 0.1);
+            border-left-color: #f44336;
+        }
+
+        .contact-error-message.d-none {
+            display: none !important;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Form validation styles */
+        .form-control.is-valid {
+            border-color: var(--primary-color);
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%234CAF50' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right calc(0.375em + 0.1875rem) center;
+            background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+        }
+
+        .form-control.is-invalid {
+            border-color: #f44336;
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23f44336'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23f44336' stroke='none'/%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right calc(0.375em + 0.1875rem) center;
+            background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+        }
+
+        .invalid-feedback {
+            color: #f44336;
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+        }
+        
+        .page-header {
+            height: 50vh;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            color: white;
+        }
+        
+        .page-header-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        
+        .page-header-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .page-header-image .gradient-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4));
+        }
+    </style>
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader-spinner"></div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <span class="brand-text">FitLife</span>
+                <span class="brand-accent">Coach</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="services.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="testimonials.html">Testimonials</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pricing.html">Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="booking.html">Book Now</a>
+                    </li>
+                    <li class="nav-item ms-lg-3">
+                        <a href="booking.html" class="btn btn-sm btn-primary nav-btn">Book a Session</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="page-header-image">
+            <img src="https://images.unsplash.com/photo-1574680178050-55c6a6a96e0a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1169&q=80" alt="Contact Us">
+            <div class="gradient-overlay"></div>
+        </div>
+        <div class="page-header-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto text-center">
+                        <h1 class="page-title" data-aos="fade-up">Contact Us</h1>
+                        <nav aria-label="breadcrumb" data-aos="fade-up" data-aos-delay="200">
+                            <ol class="breadcrumb justify-content-center">
+                                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Contact</li>
+                            </ol>
+                        </nav>
+                        <p class="lead mt-3" data-aos="fade-up" data-aos-delay="300">Get in touch with our team to start your fitness journey</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contact Section -->
+    <section class="contact-section py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 mb-5 mb-lg-0" data-aos="fade-right">
+                    <div class="section-header">
+                        <span class="section-subtitle">Get In Touch</span>
+                        <h2 class="section-title">We're Here to Help You</h2>
+                        <p class="lead mb-5">Have questions about our coaching services? Want to learn more about how we can help you achieve your fitness goals? Reach out to us using any of the methods below.</p>
+                    </div>
+                    
+                    <div class="contact-info">
+                        <div class="contact-info-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h5 class="mb-1">Our Location</h5>
+                                <p class="mb-0">123 Fitness Street, Wellness City, WC 12345</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-info-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h5 class="mb-1">Phone Number</h5>
+                                <p class="mb-0">(555) 123-4567</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-info-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h5 class="mb-1">Email Address</h5>
+                                <p class="mb-0">info@fitlifecoach.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-info-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <h5 class="mb-1">Office Hours</h5>
+                                <p class="mb-0">Monday - Friday: 9:00 AM - 6:00 PM<br>Saturday: 10:00 AM - 2:00 PM<br>Sunday: Closed</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="social-connect mt-5">
+                        <h5 class="mb-3">Connect With Us</h5>
+                        <div class="social-links">
+                            <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-7" data-aos="fade-left" data-aos-delay="200">
+                    <div class="contact-form-container" id="contactFormContainer">
+                        <div class="contact-success-message" id="contactSuccessMessage">
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-check-circle text-success me-3" style="font-size: 2rem;"></i>
+                                <div>
+                                    <h5 class="mb-1">Message Sent Successfully!</h5>
+                                    <p class="mb-0">Thank you for reaching out. We'll get back to you within 24 hours.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-form">
+                            <h3 class="mb-4">Send Us a Message</h3>
+
+                            <!-- Error message container -->
+                            <div class="contact-error-message alert alert-danger d-none" id="contactErrorMessage">
+                                <div class="d-flex align-items-center">
+                                    <i class="fas fa-exclamation-circle text-danger me-3" style="font-size: 1.5rem;"></i>
+                                    <div>
+                                        <h5 class="mb-1">Error</h5>
+                                        <p class="mb-0" id="errorText">Please check your form and try again.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- FormSubmit integration -->
+                            <form id="contactForm" action="https://formsubmit.co/grantunuas@gmail.com" method="POST" class="needs-validation">
+                                <!-- FormSubmit configuration -->
+                                <input type="hidden" name="_next" value="https://ogheneigbunu.github.io/contact-form/thank-you.html">
+                                <input type="hidden" name="_subject" value="New message from FitLife Coach website">
+                                <input type="hidden" name="_template" value="table">
+                                <input type="hidden" name="_captcha" value="true">
+                                <input type="hidden" name="_autoresponse" value="Thank you for contacting FitLife Coach! We've received your message and our team will get back to you within 24 hours. In the meantime, feel free to explore our services at fitlifecoach.com. Best regards, The FitLife Coach Team">
+                                <input type="hidden" name="_autoresponse_subject" value="Thank you for contacting FitLife Coach">
+
+                                <!-- Honeypot field to prevent spam -->
+                                <input type="text" name="_honey" style="display:none">
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-floating mb-3">
+                                            <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
+                                            <label for="name">Your Name</label>
+                                            <div class="invalid-feedback">
+                                                Please provide your name.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating mb-3">
+                                            <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+                                            <label for="email">Your Email</label>
+                                            <div class="invalid-feedback">
+                                                Please provide a valid email address.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" required>
+                                    <label for="subject">Subject</label>
+                                    <div class="invalid-feedback">
+                                        Please provide a subject.
+                                    </div>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <textarea class="form-control" id="message" name="message" placeholder="Your Message" style="height: 150px" required></textarea>
+                                    <label for="message">Your Message</label>
+                                    <div class="invalid-feedback">
+                                        Please provide your message.
+                                    </div>
+                                </div>
+                                <div class="form-check mb-4">
+                                    <input class="form-check-input" type="checkbox" value="agreed" name="privacy_policy" id="privacyCheck" required>
+                                    <label class="form-check-label" for="privacyCheck">
+                                        I agree to the <a href="privacy.html">privacy policy</a>
+                                    </label>
+                                    <div class="invalid-feedback">
+                                        You must agree to our privacy policy.
+                                    </div>
+                                </div>
+
+                                <!-- Submit button with loading state -->
+                                <button type="submit" class="btn btn-primary btn-lg btn-submit" id="submitButton">
+                                    <span class="submit-text"><i class="fas fa-paper-plane me-2"></i>Send Message</span>
+                                    <span class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true" id="submitSpinner"></span>
+                                    <span class="submit-loading d-none">Sending...</span>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section py-5 bg-light">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <span class="section-subtitle">Our Location</span>
+                <h2 class="section-title">Find Us</h2>
+                <p class="section-description mx-auto">Visit our fitness center to meet our coaches in person</p>
+            </div>
+            <div class="map-container" data-aos="zoom-in">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.9663095343008!2d-74.00425882426698!3d40.74076684375838!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259bf5c1654f3%3A0xc80f9cfce5383d5d!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sin!4v1659632972261!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section py-5">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <span class="section-subtitle">Common Questions</span>
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-description mx-auto">Find answers to common questions about our services</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="accordion" id="faqAccordion" data-aos="fade-up" data-aos-delay="200">
+                        <div class="accordion-item mb-3 border rounded shadow-sm">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    How do online coaching sessions work?
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Our online coaching sessions are conducted via video conferencing platforms like Zoom. You'll receive a personalized workout plan, nutrition guidance, and regular check-ins with your coach to track progress and make adjustments as needed.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item mb-3 border rounded shadow-sm">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    How much does coaching cost?
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Our coaching packages start at $199 per month for basic services. We offer different tiers based on the level of support and customization you need. Visit our <a href="pricing.html">pricing page</a> for a detailed breakdown and to find the package that best suits your needs and budget.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item mb-3 border rounded shadow-sm">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    Do I need special equipment for the workouts?
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Not necessarily. We design your workout program based on the equipment you have access to, whether that's a fully equipped gym, basic home equipment, or no equipment at all. We believe in making fitness accessible regardless of your circumstances.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item border rounded shadow-sm">
+                            <h2 class="accordion-header" id="headingFour">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                    How long until I see results?
+                                </button>
+                            </h2>
+                            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Results vary based on individual factors including starting point, consistency, and goals. Most clients begin to notice changes within 4-6 weeks of consistent training and nutrition. Remember that sustainable results take time, and we focus on long-term success rather than quick fixes.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section py-5">
+        <div class="container">
+            <div class="cta-content" data-aos="fade-up">
+                <div class="row align-items-center">
+                    <div class="col-lg-8 mb-4 mb-lg-0">
+                        <h2>Ready to Start Your Fitness Journey?</h2>
+                        <p class="lead mb-0">Book a free consultation session with one of our expert coaches today.</p>
+                    </div>
+                    <div class="col-lg-4 text-lg-end">
+                        <a href="booking.html" class="btn btn-lg btn-light btn-glow">Book a Session</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <div class="footer-brand">
+                        <span class="brand-text">FitLife</span>
+                        <span class="brand-accent">Coach</span>
+                    </div>
+                    <p>Transforming lives through personalized fitness and wellness coaching. Your journey to a better you starts here.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-2 mb-4 mb-md-0">
+                    <h5>Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="testimonials.html">Testimonials</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 col-lg-2 mb-4 mb-md-0">
+                    <h5>Services</h5>
+                    <ul class="footer-links">
+                        <li><a href="services.html">Personal Training</a></li>
+                        <li><a href="services.html">Nutrition Coaching</a></li>
+                        <li><a href="services.html">Lifestyle Coaching</a></li>
+                        <li><a href="services.html">Group Classes</a></li>
+                        <li><a href="services.html">Online Coaching</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 col-lg-4">
+                    <h5>Contact Us</h5>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Fitness Street, Wellness City</li>
+                        <li><i class="fas fa-phone"></i> (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> info@fitlifecoach.com</li>
+                        <li><i class="fas fa-clock"></i> Mon-Fri: 6am-8pm, Sat: 8am-4pm</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">&copy; 2025 FitLife Coach. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <a href="privacy.html" class="text-decoration-none me-3">Privacy Policy</a>
+                    <a href="terms.html" class="text-decoration-none">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery for additional functionality -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <!-- AOS JS for scroll animations -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+
+    <!-- Contact Form Handling Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get the form element
+            const form = document.getElementById('contactForm');
+
+            // Form validation and submission
+            if (form) {
+                // Real-time validation with visual feedback
+                const inputs = form.querySelectorAll('input, textarea');
+                inputs.forEach(input => {
+                    // Skip hidden inputs
+                    if (input.type === 'hidden' || input.style.display === 'none') {
+                        return;
+                    }
+
+                    // Validate on blur (when user leaves the field)
+                    input.addEventListener('blur', function() {
+                        validateField(this);
+                    });
+
+                    // Validate on input (as user types)
+                    input.addEventListener('input', function() {
+                        validateField(this);
+                    });
+                });
+
+                // Form submission validation
+                form.addEventListener('submit', function(event) {
+                    // Check form validity
+                    if (!form.checkValidity()) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                        form.classList.add('was-validated');
+
+                        // Show error message
+                        const errorMessage = document.getElementById('contactErrorMessage');
+                        if (errorMessage) {
+                            errorMessage.classList.remove('d-none');
+
+                            // Scroll to error message
+                            errorMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+                            // Hide error message after 5 seconds
+                            setTimeout(() => {
+                                errorMessage.classList.add('d-none');
+                            }, 5000);
+                        }
+                        return;
+                    }
+
+                    // If form is valid, store submission in localStorage
+                    localStorage.setItem('formSubmitted', 'true');
+
+                    // Let the form submit naturally to FormSubmit
+                    // Auto-reply is configured through hidden fields
+                    // No preventDefault() here to allow natural form submission
+                });
+
+                // Field validation function
+                function validateField(field) {
+                    // Skip validation for non-required fields that are empty
+                    if (!field.required && field.value === '') {
+                        field.classList.remove('is-valid', 'is-invalid');
+                        return;
+                    }
+
+                    if (field.checkValidity()) {
+                        field.classList.add('is-valid');
+                        field.classList.remove('is-invalid');
+                    } else if (field.value !== '') {
+                        field.classList.add('is-invalid');
+                        field.classList.remove('is-valid');
+                    }
+                }
+            }
+
+            // Check if user came back from form submission
+            if (localStorage.getItem('formSubmitted') === 'true') {
+                const successMessage = document.getElementById('contactSuccessMessage');
+                if (successMessage) {
+                    successMessage.style.display = 'block';
+
+                    // Clear the flag
+                    localStorage.removeItem('formSubmitted');
+
+                    // Hide success message after 5 seconds
+                    setTimeout(() => {
+                        successMessage.style.display = 'none';
+                    }, 5000);
+                }
+            }
+        });
+    </script>
+</body>
+</html>

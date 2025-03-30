@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You - FitLife Coach</title>
+    <!-- Immediate preloader hiding -->
+    <script>
+        // Hide preloader immediately when page starts loading
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('.preloader').style.display = 'none';
+        });
+    </script>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- AOS CSS for scroll animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Additional styles specific to thank you page */
+        body {
+            overflow-x: hidden;
+        }
+        
+        .thank-you-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 100px 0;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(240, 255, 240, 0.9) 100%);
+        }
+        
+        .thank-you-container {
+            opacity: 1;
+            transform: translateY(0);
+            position: relative;
+            z-index: 10;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .thank-you-card {
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 3rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            max-width: 700px;
+            margin: 0 auto;
+            transition: all 0.3s ease;
+        }
+        
+        .thank-you-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+        }
+        
+        .thank-you-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--box-shadow-hover);
+        }
+        
+        .success-icon {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, var(--primary-light), var(--primary-color));
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            font-size: 3rem;
+            box-shadow: 0 10px 25px rgba(76, 175, 80, 0.3);
+            position: relative;
+            animation: pulseIcon 2s infinite ease-in-out;
+        }
+        
+        @keyframes pulseIcon {
+            0% {
+                box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.4);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(76, 175, 80, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(76, 175, 80, 0);
+            }
+        }
+        
+        .success-icon .checkmark {
+            stroke-dasharray: 100;
+            stroke-dashoffset: 0;
+        }
+        
+        @keyframes drawCheck {
+            from {
+                stroke-dashoffset: 100;
+            }
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+        
+        .thank-you-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        
+        .thank-you-subtitle {
+            font-size: 1.2rem;
+            color: var(--gray-color);
+            margin-bottom: 2rem;
+        }
+        
+        .order-details {
+            background-color: rgba(76, 175, 80, 0.05);
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+        
+        .order-details h4 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        .detail-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px dashed rgba(76, 175, 80, 0.2);
+        }
+        
+        .detail-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .detail-label {
+            font-weight: 500;
+            color: var(--gray-dark);
+        }
+        
+        .detail-value {
+            font-weight: 600;
+            color: var(--primary-dark);
+        }
+        
+        .btn-home {
+            padding: 0.8rem 2.5rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            transition: all 0.5s ease;
+            margin-top: 1rem;
+        }
+        
+        .btn-home::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color), var(--primary-color));
+            background-size: 200% 200%;
+            z-index: -1;
+            transition: all 0.5s ease;
+            opacity: 0;
+        }
+        
+        .btn-home:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(76, 175, 80, 0.4);
+        }
+        
+        .btn-home:hover::before {
+            opacity: 1;
+            animation: gradientShift 3s ease infinite;
+        }
+        
+        @keyframes gradientShift {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #f00;
+            opacity: 0;
+            animation: confetti-fall 3s ease-in-out forwards;
+            z-index: 1;
+        }
+        
+        @keyframes confetti-fall {
+            0% {
+                transform: translateY(-100vh) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        .minimal-footer {
+            background-color: white;
+            padding: 1.5rem 0;
+            text-align: center;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .minimal-footer p {
+            margin-bottom: 0;
+            color: var(--gray-color);
+        }
+        
+        .shape-divider {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+            transform: rotate(180deg);
+        }
+
+        .shape-divider svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 150px;
+        }
+
+        .shape-divider .shape-fill {
+            fill: #FFFFFF;
+        }
+    </style>
+</head>
+<body>
+    <!-- Preloader - Hidden by default -->
+    <div class="preloader" style="display: none;">
+        <div class="preloader-spinner"></div>
+    </div>
+
+    <!-- Thank You Section -->
+    <section class="thank-you-section">
+        <div class="container">
+            <div class="thank-you-container">
+                <div class="thank-you-card">
+                    <div class="success-icon">
+                        <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path class="checkmark" d="M16 30L26 40L44 20" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    
+                    <h1 class="thank-you-title">Thank You!</h1>
+                    <p class="thank-you-subtitle">Your submission has been received successfully. We appreciate your interest in FitLife Coach.</p>
+                    
+                    <div class="order-details">
+                        <h4>Confirmation Details</h4>
+                        <div class="detail-item">
+                            <span class="detail-label">Reference Number:</span>
+                            <span class="detail-value">#FL-2025-7890</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Date:</span>
+                            <span class="detail-value" id="currentDate">June 15, 2025</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Status:</span>
+                            <span class="detail-value"><span class="badge bg-success">Confirmed</span></span>
+                        </div>
+                    </div>
+                    
+                    <p>We've sent a confirmation email with all the details. Our team will contact you shortly to discuss the next steps.</p>
+                    
+                    <a href="index.html" class="btn btn-primary btn-lg btn-home">
+                        <i class="fas fa-home me-2"></i>Return to Homepage
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Confetti Container (will be populated by JS) -->
+        <div id="confetti-container"></div>
+        
+        <!-- Shape Divider -->
+        <div class="shape-divider">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" class="shape-fill"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Minimal Footer -->
+    <footer class="minimal-footer">
+        <div class="container">
+            <p>&copy; 2025 FitLife Coach. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery for additional functionality -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- AOS JS for scroll animations -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+    
+    <!-- Confetti Script -->
+    <script>
+        // Immediately hide preloader
+        window.onload = function() {
+            // Hide preloader immediately
+            const preloader = document.querySelector('.preloader');
+            if (preloader) {
+                preloader.style.display = 'none';
+            }
+        };
+
+        // Also try to hide preloader as soon as DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Hide preloader immediately
+            const preloader = document.querySelector('.preloader');
+            if (preloader) {
+                preloader.style.display = 'none';
+            }
+
+            // Set current date
+            const options = { year: 'numeric', month: 'long', day: 'numeric' };
+            const currentDate = new Date().toLocaleDateString('en-US', options);
+            document.getElementById('currentDate').textContent = currentDate;
+
+            // Create confetti
+            createConfetti();
+
+            // Initialize AOS
+            AOS.init();
+        });
+
+        // Hide preloader immediately (third attempt)
+        setTimeout(function() {
+            const preloader = document.querySelector('.preloader');
+            if (preloader) {
+                preloader.style.display = 'none';
+            }
+        }, 500);
+
+        function createConfetti() {
+            const confettiContainer = document.getElementById('confetti-container');
+            const colors = ['#4CAF50', '#8BC34A', '#CDDC39', '#FFEB3B', '#FFC107', '#FF9800', '#FF5722'];
+            const confettiCount = 150;
+
+            for (let i = 0; i < confettiCount; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+
+                // Random properties
+                const size = Math.random() * 10 + 5;
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                const left = Math.random() * 100;
+                const delay = Math.random() * 3;
+                const duration = Math.random() * 3 + 3;
+                const rotation = Math.random() * 360;
+
+                // Apply styles
+                confetti.style.width = `${size}px`;
+                confetti.style.height = `${size}px`;
+                confetti.style.backgroundColor = color;
+                confetti.style.left = `${left}%`;
+                confetti.style.animationDelay = `${delay}s`;
+                confetti.style.animationDuration = `${duration}s`;
+                confetti.style.transform = `rotate(${rotation}deg)`;
+
+                // Random shape
+                const shapeType = Math.floor(Math.random() * 3);
+                if (shapeType === 0) {
+                    confetti.style.borderRadius = '50%'; // Circle
+                } else if (shapeType === 1) {
+                    confetti.style.borderRadius = '0'; // Square
+                } else {
+                    confetti.style.width = `${size}px`;
+                    confetti.style.height = `${size}px`;
+                    confetti.style.backgroundColor = 'transparent';
+                    confetti.style.border = `${size/5}px solid ${color}`;
+                    confetti.style.borderRadius = '50%';
+                }
+
+                confettiContainer.appendChild(confetti);
+
+                // Remove confetti after animation completes
+                setTimeout(() => {
+                    confetti.remove();
+                }, (delay + duration) * 1000);
+            }
+        }
+    </script>
+</body>
+</html>

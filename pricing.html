@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing Plans - FitLife Coach</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- AOS CSS for scroll animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Swiper CSS for modern sliders -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader-spinner"></div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <span class="brand-text">FitLife</span>
+                <span class="brand-accent">Coach</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="services.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="testimonials.html">Testimonials</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="pricing.html">Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="booking.html">Book Now</a>
+                    </li>
+                    <li class="nav-item ms-lg-3">
+                        <a href="contact.html" class="btn btn-sm btn-primary nav-btn">Get Started</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="page-header-image">
+            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Pricing Plans">
+            <div class="gradient-overlay"></div>
+        </div>
+        <div class="page-header-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto text-center">
+                        <h1 class="page-title" data-aos="fade-up">Pricing Plans</h1>
+                        <nav aria-label="breadcrumb" data-aos="fade-up" data-aos-delay="200">
+                            <ol class="breadcrumb justify-content-center">
+                                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Pricing</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Pricing Toggle Section -->
+    <section class="pricing-toggle-section py-5">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-subtitle">Flexible Options</span>
+                <h2 class="section-title">Choose Your Plan</h2>
+                <p class="section-description mx-auto">Select the perfect coaching plan that fits your goals and budget</p>
+            </div>
+            
+            <div class="pricing-toggle text-center mt-4" data-aos="fade-up">
+                <span class="pricing-toggle-text">Monthly</span>
+                <label class="pricing-switch">
+                    <input type="checkbox" id="pricingToggle">
+                    <span class="pricing-slider"></span>
+                </label>
+                <span class="pricing-toggle-text">Annual</span>
+                <span class="pricing-save-badge">Save 20%</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Plans Section -->
+    <section class="pricing-plans-section py-5 bg-light">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Basic Plan -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <h3 class="pricing-title">Basic</h3>
+                            <p class="pricing-subtitle">Perfect for beginners</p>
+                            <div class="pricing-price">
+                                <span class="currency">$</span>
+                                <span class="amount monthly-price">49</span>
+                                <span class="amount annual-price">39</span>
+                                <span class="period">/month</span>
+                            </div>
+                        </div>
+                        <div class="pricing-features">
+                            <ul>
+                                <li><i class="fas fa-check"></i> Personalized workout plan</li>
+                                <li><i class="fas fa-check"></i> Monthly plan adjustments</li>
+                                <li><i class="fas fa-check"></i> Email support</li>
+                                <li><i class="fas fa-check"></i> Access to workout library</li>
+                                <li><i class="fas fa-check"></i> Progress tracking</li>
+                                <li class="disabled"><i class="fas fa-times"></i> Nutrition guidance</li>
+                                <li class="disabled"><i class="fas fa-times"></i> Weekly check-ins</li>
+                                <li class="disabled"><i class="fas fa-times"></i> Video form analysis</li>
+                                <li class="disabled"><i class="fas fa-times"></i> 24/7 chat support</li>
+                                <li class="disabled"><i class="fas fa-times"></i> Priority support</li>
+                            </ul>
+                        </div>
+                        <div class="pricing-footer">
+                            <a href="#" class="btn btn-outline-primary btn-lg btn-block btn-glow-hover">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Premium Plan (Featured) -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="pricing-card featured">
+                        <div class="pricing-badge">Most Popular</div>
+                        <div class="pricing-header">
+                            <h3 class="pricing-title">Premium</h3>
+                            <p class="pricing-subtitle">For dedicated fitness enthusiasts</p>
+                            <div class="pricing-price">
+                                <span class="currency">$</span>
+                                <span class="amount monthly-price">99</span>
+                                <span class="amount annual-price">79</span>
+                                <span class="period">/month</span>
+                            </div>
+                        </div>
+                        <div class="pricing-features">
+                            <ul>
+                                <li><i class="fas fa-check"></i> Personalized workout plan</li>
+                                <li><i class="fas fa-check"></i> Bi-weekly plan adjustments</li>
+                                <li><i class="fas fa-check"></i> Email & phone support</li>
+                                <li><i class="fas fa-check"></i> Access to workout library</li>
+                                <li><i class="fas fa-check"></i> Advanced progress tracking</li>
+                                <li><i class="fas fa-check"></i> Basic nutrition guidance</li>
+                                <li><i class="fas fa-check"></i> Weekly check-ins</li>
+                                <li><i class="fas fa-check"></i> Monthly video form analysis</li>
+                                <li class="disabled"><i class="fas fa-times"></i> 24/7 chat support</li>
+                                <li class="disabled"><i class="fas fa-times"></i> Priority support</li>
+                            </ul>
+                        </div>
+                        <div class="pricing-footer">
+                            <a href="#" class="btn btn-primary btn-lg btn-block btn-glow-hover">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Elite Plan -->
+                <div class="col-lg-4 col-md-6 mx-auto" data-aos="fade-up" data-aos-delay="300">
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <h3 class="pricing-title">Elite</h3>
+                            <p class="pricing-subtitle">For maximum results</p>
+                            <div class="pricing-price">
+                                <span class="currency">$</span>
+                                <span class="amount monthly-price">199</span>
+                                <span class="amount annual-price">159</span>
+                                <span class="period">/month</span>
+                            </div>
+                        </div>
+                        <div class="pricing-features">
+                            <ul>
+                                <li><i class="fas fa-check"></i> Personalized workout plan</li>
+                                <li><i class="fas fa-check"></i> Weekly plan adjustments</li>
+                                <li><i class="fas fa-check"></i> Email, phone & video support</li>
+                                <li><i class="fas fa-check"></i> Access to premium content</li>
+                                <li><i class="fas fa-check"></i> Advanced progress tracking</li>
+                                <li><i class="fas fa-check"></i> Custom nutrition plan</li>
+                                <li><i class="fas fa-check"></i> Bi-weekly check-ins</li>
+                                <li><i class="fas fa-check"></i> Weekly video form analysis</li>
+                                <li><i class="fas fa-check"></i> 24/7 chat support</li>
+                                <li><i class="fas fa-check"></i> Priority support</li>
+                            </ul>
+                        </div>
+                        <div class="pricing-footer">
+                            <a href="#" class="btn btn-outline-primary btn-lg btn-block btn-glow-hover">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pricing-note text-center mt-5" data-aos="fade-up">
+                <p>All plans include a 14-day money-back guarantee. No contracts – cancel anytime.</p>
+                <p class="small text-muted">Prices shown in USD. Taxes may apply depending on your location.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing FAQ Section -->
+    <section class="pricing-faq-section py-5">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-subtitle">Common Questions</span>
+                <h2 class="section-title">Pricing FAQs</h2>
+                <p class="section-description mx-auto">Find answers to frequently asked questions about our pricing plans</p>
+            </div>
+            
+            <div class="row mt-5">
+                <div class="col-lg-8 mx-auto">
+                    <div class="accordion" id="pricingFAQ">
+                        <!-- FAQ Item 1 -->
+                        <div class="accordion-item" data-aos="fade-up" data-aos-delay="100">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqOne" aria-expanded="true" aria-controls="faqOne">
+                                    What's included in each pricing plan?
+                                </button>
+                            </h2>
+                            <div id="faqOne" class="accordion-collapse collapse show" data-bs-parent="#pricingFAQ">
+                                <div class="accordion-body">
+                                    <p>Each plan includes different levels of coaching support and features. The Basic plan provides essential workout guidance, while Premium adds nutrition support and more frequent check-ins. The Elite plan offers our most comprehensive coaching experience with custom nutrition plans, frequent adjustments, and priority support.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- FAQ Item 2 -->
+                        <div class="accordion-item" data-aos="fade-up" data-aos-delay="200">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqTwo" aria-expanded="false" aria-controls="faqTwo">
+                                    Can I switch between plans?
+                                </button>
+                            </h2>
+                            <div id="faqTwo" class="accordion-collapse collapse" data-bs-parent="#pricingFAQ">
+                                <div class="accordion-body">
+                                    <p>Yes, you can upgrade or downgrade your plan at any time. If you upgrade, you'll be charged the prorated difference for the remainder of your billing cycle. If you downgrade, the changes will take effect at the start of your next billing cycle.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- FAQ Item 3 -->
+                        <div class="accordion-item" data-aos="fade-up" data-aos-delay="300">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqThree" aria-expanded="false" aria-controls="faqThree">
+                                    Is there a contract or commitment?
+                                </button>
+                            </h2>
+                            <div id="faqThree" class="accordion-collapse collapse" data-bs-parent="#pricingFAQ">
+                                <div class="accordion-body">
+                                    <p>No, all our plans are subscription-based with no long-term contracts. You can cancel at any time, and your access will continue until the end of your current billing period. We don't believe in locking clients into contracts – we want to earn your business each month with great results.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- FAQ Item 4 -->
+                        <div class="accordion-item" data-aos="fade-up" data-aos-delay="400">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqFour" aria-expanded="false" aria-controls="faqFour">
+                                    What's the difference between monthly and annual billing?
+                                </button>
+                            </h2>
+                            <div id="faqFour" class="accordion-collapse collapse" data-bs-parent="#pricingFAQ">
+                                <div class="accordion-body">
+                                    <p>With annual billing, you pay for 12 months upfront and receive a 20% discount compared to monthly billing. This is a great option if you're committed to your fitness journey and want to save money. Monthly billing offers more flexibility with a slightly higher monthly cost.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- FAQ Item 5 -->
+                        <div class="accordion-item" data-aos="fade-up" data-aos-delay="500">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqFive" aria-expanded="false" aria-controls="faqFive">
+                                    How does the money-back guarantee work?
+                                </button>
+                            </h2>
+                            <div id="faqFive" class="accordion-collapse collapse" data-bs-parent="#pricingFAQ">
+                                <div class="accordion-body">
+                                    <p>We offer a 14-day money-back guarantee on all new subscriptions. If you're not satisfied with our coaching services within the first 14 days, simply contact our support team, and we'll process a full refund with no questions asked. This gives you a risk-free opportunity to experience our coaching.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Table Section -->
+    <section class="comparison-section py-5 bg-light">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-subtitle">Side by Side</span>
+                <h2 class="section-title">Plan Comparison</h2>
+                <p class="section-description mx-auto">Compare our plans to find the perfect fit for your fitness journey</p>
+            </div>
+            
+            <div class="table-responsive mt-5" data-aos="fade-up">
+                <table class="table comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Features</th>
+                            <th class="text-center">Basic</th>
+                            <th class="text-center highlight">Premium</th>
+                            <th class="text-center">Elite</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Monthly Price</td>
+                            <td class="text-center">$49</td>
+                            <td class="text-center highlight">$99</td>
+                            <td class="text-center">$199</td>
+                        </tr>
+                        <tr>
+                            <td>Annual Price (per month)</td>
+                            <td class="text-center">$39</td>
+                            <td class="text-center highlight">$79</td>
+                            <td class="text-center">$159</td>
+                        </tr>
+                        <tr>
+                            <td>Workout Plan Updates</td>
+                            <td class="text-center">Monthly</td>
+                            <td class="text-center highlight">Bi-weekly</td>
+                            <td class="text-center">Weekly</td>
+                        </tr>
+                        <tr>
+                            <td>Nutrition Guidance</td>
+                            <td class="text-center"><i class="fas fa-times text-danger"></i></td>
+                            <td class="text-center highlight">Basic</td>
+                            <td class="text-center">Custom Plan</td>
+                        </tr>
+                        <tr>
+                            <td>Check-ins</td>
+                            <td class="text-center">Monthly</td>
+                            <td class="text-center highlight">Weekly</td>
+                            <td class="text-center">Bi-weekly</td>
+                        </tr>
+                        <tr>
+                            <td>Support Channels</td>
+                            <td class="text-center">Email</td>
+                            <td class="text-center highlight">Email & Phone</td>
+                            <td class="text-center">Email, Phone & Video</td>
+                        </tr>
+                        <tr>
+                            <td>Video Form Analysis</td>
+                            <td class="text-center"><i class="fas fa-times text-danger"></i></td>
+                            <td class="text-center highlight">Monthly</td>
+                            <td class="text-center">Weekly</td>
+                        </tr>
+                        <tr>
+                            <td>24/7 Chat Support</td>
+                            <td class="text-center"><i class="fas fa-times text-danger"></i></td>
+                            <td class="text-center highlight"><i class="fas fa-times text-danger"></i></td>
+                            <td class="text-center"><i class="fas fa-check text-success"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Priority Support</td>
+                            <td class="text-center"><i class="fas fa-times text-danger"></i></td>
+                            <td class="text-center highlight"><i class="fas fa-times text-danger"></i></td>
+                            <td class="text-center"><i class="fas fa-check text-success"></i></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td class="text-center"><a href="#" class="btn btn-sm btn-outline-primary">Choose Basic</a></td>
+                            <td class="text-center highlight"><a href="#" class="btn btn-sm btn-primary">Choose Premium</a></td>
+                            <td class="text-center"><a href="#" class="btn btn-sm btn-outline-primary">Choose Elite</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section class="pricing-testimonial-section py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
+                    <div class="testimonial-highlight">
+                        <div class="testimonial-text">
+                            <p>"I started with the Basic plan to test the waters, but quickly upgraded to Premium. The nutrition guidance and weekly check-ins made a huge difference in my progress. Worth every penny!"</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-image">
+                                <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Jennifer K.">
+                            </div>
+                            <div class="author-info">
+                                <h4>Jennifer K.</h4>
+                                <p>Premium Plan Member • 8 Months</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="section-header">
+                        <span class="section-subtitle">Client Success</span>
+                        <h2 class="section-title">Real Results, Real Value</h2>
+                        <p class="lead">Our clients consistently report that their investment in coaching pays off with faster results, fewer plateaus, and sustainable habits that last a lifetime.</p>
+                        <a href="testimonials.html" class="btn btn-outline-primary mt-4">Read More Success Stories</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section py-5">
+        <div class="container">
+            <div class="cta-content" data-aos="fade-up">
+                <div class="row align-items-center">
+                    <div class="col-lg-8 mb-4 mb-lg-0">
+                        <h2>Ready to Transform Your Fitness?</h2>
+                        <p class="lead mb-0">Choose your plan and start your journey today with our 14-day money-back guarantee.</p>
+                    </div>
+                    <div class="col-lg-4 text-lg-end">
+                        <a href="#" class="btn btn-lg btn-light btn-glow">Get Started Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <div class="footer-brand">
+                        <span class="brand-text">FitLife</span>
+                        <span class="brand-accent">Coach</span>
+                    </div>
+                    <p>Transforming lives through personalized fitness and wellness coaching. Your journey to a better you starts here.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-2 mb-4 mb-md-0">
+                    <h5>Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="testimonials.html">Testimonials</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 col-lg-2 mb-4 mb-md-0">
+                    <h5>Services</h5>
+                    <ul class="footer-links">
+                        <li><a href="services.html">Personal Training</a></li>
+                        <li><a href="services.html">Nutrition Coaching</a></li>
+                        <li><a href="services.html">Lifestyle Coaching</a></li>
+                        <li><a href="services.html">Group Classes</a></li>
+                        <li><a href="services.html">Online Coaching</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 col-lg-4">
+                    <h5>Contact Us</h5>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Fitness Street, Wellness City</li>
+                        <li><i class="fas fa-phone"></i> (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> info@fitlifecoach.com</li>
+                        <li><i class="fas fa-clock"></i> Mon-Fri: 6am-8pm, Sat: 8am-4pm</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">&copy; 2025 FitLife Coach. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <a href="privacy.html" class="text-decoration-none me-3">Privacy Policy</a>
+                    <a href="terms.html" class="text-decoration-none">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery for additional functionality -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <!-- AOS JS for scroll animations -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+</body>
+</html>

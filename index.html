@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitLife Coach - Transform Your Life</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- AOS CSS for scroll animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Swiper CSS for modern sliders -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader-spinner"></div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <span class="brand-text">FitLife</span>
+                <span class="brand-accent">Coach</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="services.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="testimonials.html">Testimonials</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pricing.html">Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="booking.html">Book Now</a>
+                    </li>
+                    <li class="nav-item ms-lg-3">
+                        <a href="contact.html" class="btn btn-sm btn-primary nav-btn">Get Started</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Gradient Overlay -->
+    <header class="hero-section">
+        <div class="hero-image-container">
+            <img src="https://images.unsplash.com/photo-1599058917765-a780eda07a3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Fitness Training" class="hero-image">
+            <div class="gradient-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto text-center">
+                        <h1 class="hero-title">
+                            <span class="hero-title-static">Elevate Your</span>
+                            <span class="hero-title-dynamic">
+                                <span class="dynamic-text">Fitness</span>
+                                <span class="dynamic-text">Wellness</span>
+                                <span class="dynamic-text">Potential</span>
+                                <span class="dynamic-text">Life</span>
+                            </span>
+                        </h1>
+                        <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">
+                            Personalized coaching that transforms your body, mind, and lifestyle
+                        </p>
+                        <div class="hero-buttons" data-aos="fade-up" data-aos-delay="400">
+                            <a href="contact.html" class="btn btn-primary btn-lg btn-glow me-3">Start Your Journey</a>
+                            <a href="#about" class="btn btn-outline-light btn-lg">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll-indicator">
+            <a href="#about">
+                <div class="mouse">
+                    <div class="wheel"></div>
+                </div>
+                <div>
+                    <span class="scroll-arrows">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </span>
+                </div>
+            </a>
+        </div>
+    </header>
+
+    <!-- Features Section -->
+    <section class="features-section py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-medal"></i>
+                        </div>
+                        <h3>Expert Coaches</h3>
+                        <p>Our certified coaches bring years of experience and specialized knowledge to help you achieve your goals.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-clipboard-check"></i>
+                        </div>
+                        <h3>Personalized Plans</h3>
+                        <p>Every program is custom-designed to fit your unique needs, goals, and lifestyle.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Proven Results</h3>
+                        <p>Our data-driven approach ensures measurable progress and sustainable outcomes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section py-5" id="about">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right">
+                    <div class="about-image-container">
+                        <img src="https://images.unsplash.com/photo-1571019613576-2b22c76fd955?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="About FitLife Coach" class="img-fluid rounded-lg main-image">
+                        <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Coaching Session" class="img-fluid rounded-lg accent-image">
+                        <div class="experience-badge">
+                            <span class="number">10+</span>
+                            <span class="text">Years<br>Experience</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
+                    <div class="section-header">
+                        <span class="section-subtitle">About Us</span>
+                        <h2 class="section-title">We're More Than Just Fitness Coaches</h2>
+                    </div>
+                    <p class="lead">At FitLife Coach, we believe that true transformation happens when you address the whole person — not just physical fitness.</p>
+                    <p>Our comprehensive approach integrates personalized training, nutrition guidance, and lifestyle coaching to create sustainable change that lasts a lifetime. We meet you where you are and help you build the habits, mindset, and skills needed to thrive.</p>
+                    <div class="about-stats">
+                        <div class="row">
+                            <div class="col-6 col-md-4">
+                                <div class="stat-item">
+                                    <h3 class="stat-number">2,500+</h3>
+                                    <p class="stat-text">Clients Coached</p>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-4">
+                                <div class="stat-item">
+                                    <h3 class="stat-number">94%</h3>
+                                    <p class="stat-text">Success Rate</p>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-4">
+                                <div class="stat-item">
+                                    <h3 class="stat-number">15+</h3>
+                                    <p class="stat-text">Expert Coaches</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="about.html" class="btn btn-outline-primary mt-4">Discover Our Story</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section py-5" id="services">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-subtitle">Our Services</span>
+                <h2 class="section-title">Comprehensive Coaching Solutions</h2>
+                <p class="section-description mx-auto">Tailored programs designed to transform your fitness, nutrition, and lifestyle</p>
+            </div>
+            <div class="row g-4 mt-4">
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-card">
+                        <div class="service-card-inner">
+                            <div class="service-card-front">
+                                <div class="service-icon">
+                                    <i class="fas fa-dumbbell"></i>
+                                </div>
+                                <h3>Personal Training</h3>
+                                <p>Customized workout programs designed for your specific goals and fitness level</p>
+                            </div>
+                            <div class="service-card-back">
+                                <h3>Personal Training</h3>
+                                <ul class="service-features">
+                                    <li><i class="fas fa-check-circle"></i> One-on-one coaching sessions</li>
+                                    <li><i class="fas fa-check-circle"></i> Customized workout plans</li>
+                                    <li><i class="fas fa-check-circle"></i> Progress tracking</li>
+                                    <li><i class="fas fa-check-circle"></i> Form correction</li>
+                                    <li><i class="fas fa-check-circle"></i> Ongoing adjustments</li>
+                                </ul>
+                                <a href="services.html" class="btn btn-light">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-card">
+                        <div class="service-card-inner">
+                            <div class="service-card-front">
+                                <div class="service-icon">
+                                    <i class="fas fa-apple-alt"></i>
+                                </div>
+                                <h3>Nutrition Coaching</h3>
+                                <p>Personalized nutrition strategies that complement your training and lifestyle</p>
+                            </div>
+                            <div class="service-card-back">
+                                <h3>Nutrition Coaching</h3>
+                                <ul class="service-features">
+                                    <li><i class="fas fa-check-circle"></i> Personalized meal plans</li>
+                                    <li><i class="fas fa-check-circle"></i> Nutritional education</li>
+                                    <li><i class="fas fa-check-circle"></i> Grocery shopping guides</li>
+                                    <li><i class="fas fa-check-circle"></i> Recipe recommendations</li>
+                                    <li><i class="fas fa-check-circle"></i> Supplement guidance</li>
+                                </ul>
+                                <a href="services.html" class="btn btn-light">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-card">
+                        <div class="service-card-inner">
+                            <div class="service-card-front">
+                                <div class="service-icon">
+                                    <i class="fas fa-heart"></i>
+                                </div>
+                                <h3>Lifestyle Coaching</h3>
+                                <p>Holistic approach to wellness including stress management and sleep optimization</p>
+                            </div>
+                            <div class="service-card-back">
+                                <h3>Lifestyle Coaching</h3>
+                                <ul class="service-features">
+                                    <li><i class="fas fa-check-circle"></i> Stress management</li>
+                                    <li><i class="fas fa-check-circle"></i> Sleep optimization</li>
+                                    <li><i class="fas fa-check-circle"></i> Habit formation</li>
+                                    <li><i class="fas fa-check-circle"></i> Work-life balance</li>
+                                    <li><i class="fas fa-check-circle"></i> Mindfulness practices</li>
+                                </ul>
+                                <a href="services.html" class="btn btn-light">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-5">
+                <a href="services.html" class="btn btn-primary">View All Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section py-5" id="testimonials">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-subtitle">Success Stories</span>
+                <h2 class="section-title">What Our Clients Say</h2>
+                <p class="section-description mx-auto">Real results from real people who have transformed their lives with FitLife Coach</p>
+            </div>
+            <div class="testimonial-slider" data-aos="fade-up">
+                <div class="swiper testimonialSwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="testimonial-card">
+                                <div class="testimonial-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div class="testimonial-text">
+                                    <p>"Working with FitLife Coach has been transformative. Not only have I achieved my weight loss goals, but I've also gained confidence and energy I never thought possible."</p>
+                                </div>
+                                <div class="testimonial-client">
+                                    <div class="client-image">
+                                        <img src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Sarah Johnson">
+                                    </div>
+                                    <div class="client-info">
+                                        <h5>Sarah Johnson</h5>
+                                        <p>Lost 30 lbs in 6 months</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="testimonial-card">
+                                <div class="testimonial-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div class="testimonial-text">
+                                    <p>"The personalized approach at FitLife Coach made all the difference. My coach understood my busy schedule and created a program that actually worked for my lifestyle."</p>
+                                </div>
+                                <div class="testimonial-client">
+                                    <div class="client-image">
+                                        <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Michael Rodriguez">
+                                    </div>
+                                    <div class="client-info">
+                                        <h5>Michael Rodriguez</h5>
+                                        <p>Busy executive & father of two</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="testimonial-card">
+                                <div class="testimonial-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div class="testimonial-text">
+                                    <p>"After years of trying different fitness programs, FitLife Coach finally helped me build sustainable habits. I'm stronger, healthier, and happier than I've ever been."</p>
+                                </div>
+                                <div class="testimonial-client">
+                                    <div class="client-image">
+                                        <img src="https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Jennifer Lee">
+                                    </div>
+                                    <div class="client-info">
+                                        <h5>Jennifer Lee</h5>
+                                        <p>Training for 2 years</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="testimonial-card">
+                                <div class="testimonial-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div class="testimonial-text">
+                                    <p>"The nutrition coaching completely changed my relationship with food. I've learned how to fuel my body properly without feeling restricted or guilty. Game changer!"</p>
+                                </div>
+                                <div class="testimonial-client">
+                                    <div class="client-image">
+                                        <img src="https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Emily Watson">
+                                    </div>
+                                    <div class="client-info">
+                                        <h5>Emily Watson</h5>
+                                        <p>Nutrition coaching client</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+                <div class="testimonial-navigation">
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <a href="testimonials.html" class="btn btn-outline-primary">Read More Success Stories</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section class="results-section py-5">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-subtitle">Transformation</span>
+                <h2 class="section-title">Real Results, Real People</h2>
+                <p class="section-description mx-auto">See the incredible transformations our clients have achieved</p>
+            </div>
+            <div class="row g-4 mt-4">
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                    <div class="transformation-card">
+                        <div class="transformation-image">
+                            <img src="https://images.unsplash.com/photo-1579758629938-03607ccdbaba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Transformation">
+                        </div>
+                        <div class="transformation-details">
+                            <h4>Jessica M.</h4>
+                            <p>Lost 35 lbs in 6 months</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="transformation-card">
+                        <div class="transformation-image">
+                            <img src="https://images.unsplash.com/photo-1532384748853-8f54a8f476e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Transformation">
+                        </div>
+                        <div class="transformation-details">
+                            <h4>David T.</h4>
+                            <p>Gained 15 lbs of muscle</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+                    <div class="transformation-card">
+                        <div class="transformation-image">
+                            <img src="https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1169&q=80" alt="Transformation">
+                        </div>
+                        <div class="transformation-details">
+                            <h4>Robert C.</h4>
+                            <p>Improved athletic performance</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+                    <div class="transformation-card">
+                        <div class="transformation-image">
+                            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Transformation">
+                        </div>
+                        <div class="transformation-details">
+                            <h4>Jennifer L.</h4>
+                            <p>Recovered from injury</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section py-5">
+        <div class="container">
+            <div class="cta-content" data-aos="fade-up">
+                <div class="row align-items-center">
+                    <div class="col-lg-8 mb-4 mb-lg-0">
+                        <h2>Ready to Transform Your Life?</h2>
+                        <p class="lead mb-0">Take the first step towards a healthier, stronger, more confident you.</p>
+                    </div>
+                    <div class="col-lg-4 text-lg-end">
+                        <a href="contact.html" class="btn btn-lg btn-light btn-glow">Start Today</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <div class="footer-brand">
+                        <span class="brand-text">FitLife</span>
+                        <span class="brand-accent">Coach</span>
+                    </div>
+                    <p>Transforming lives through personalized fitness and wellness coaching. Your journey to a better you starts here.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-2 mb-4 mb-md-0">
+                    <h5>Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="testimonials.html">Testimonials</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 col-lg-2 mb-4 mb-md-0">
+                    <h5>Services</h5>
+                    <ul class="footer-links">
+                        <li><a href="services.html">Personal Training</a></li>
+                        <li><a href="services.html">Nutrition Coaching</a></li>
+                        <li><a href="services.html">Lifestyle Coaching</a></li>
+                        <li><a href="services.html">Group Classes</a></li>
+                        <li><a href="services.html">Online Coaching</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 col-lg-4">
+                    <h5>Contact Us</h5>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Fitness Street, Wellness City</li>
+                        <li><i class="fas fa-phone"></i> (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> info@fitlifecoach.com</li>
+                        <li><i class="fas fa-clock"></i> Mon-Fri: 6am-8pm, Sat: 8am-4pm</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">&copy; 2025 FitLife Coach. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <a href="privacy.html" class="text-decoration-none me-3">Privacy Policy</a>
+                    <a href="terms.html" class="text-decoration-none">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery for additional functionality -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <!-- AOS JS for scroll animations -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+</body>
+</html>

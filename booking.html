@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Session - FitLife Coach</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- AOS CSS for scroll animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Swiper CSS for modern sliders -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader-spinner"></div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <span class="brand-text">FitLife</span>
+                <span class="brand-accent">Coach</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="services.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="testimonials.html">Testimonials</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pricing.html">Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="booking.html">Book Now</a>
+                    </li>
+                    <li class="nav-item ms-lg-3">
+                        <a href="contact.html" class="btn btn-sm btn-primary nav-btn">Get Started</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="page-header-image">
+            <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Book a Session">
+            <div class="gradient-overlay"></div>
+        </div>
+        <div class="page-header-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto text-center">
+                        <h1 class="page-title" data-aos="fade-up">Book a Session</h1>
+                        <nav aria-label="breadcrumb" data-aos="fade-up" data-aos-delay="200">
+                            <ol class="breadcrumb justify-content-center">
+                                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Booking</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Booking Introduction Section -->
+    <section class="booking-intro-section py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
+                    <div class="section-header">
+                        <span class="section-subtitle">Schedule Your Session</span>
+                        <h2 class="section-title">Take the First Step Towards Your Fitness Goals</h2>
+                        <p class="lead">Booking a session with our expert coaches is quick and easy. Choose the service, select a date and time that works for you, and you're all set!</p>
+                    </div>
+                    <div class="booking-benefits mt-4">
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div class="benefit-text">
+                                <h5>Flexible Scheduling</h5>
+                                <p>Choose from a wide range of available time slots that fit your busy schedule.</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div class="benefit-text">
+                                <h5>Instant Confirmation</h5>
+                                <p>Receive immediate confirmation of your booking via email.</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div class="benefit-text">
+                                <h5>Easy Rescheduling</h5>
+                                <p>Need to change your appointment? Reschedule with just a few clicks.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="booking-image-container">
+                        <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Booking a Session" class="img-fluid rounded">
+                        <div class="booking-image-badge">
+                            <span>30-min</span>
+                            <small>Free Consultation</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Selection Section -->
+    <section class="service-selection-section py-5 bg-light">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-subtitle">Choose Your Service</span>
+                <h2 class="section-title">What Type of Session Do You Need?</h2>
+                <p class="section-description mx-auto">Select the service that best matches your fitness goals</p>
+            </div>
+            
+            <div class="row g-4 mt-4">
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-selection-card">
+                        <div class="service-selection-icon">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <h3>Initial Consultation</h3>
+                        <p>A 30-minute session to discuss your goals, assess your current fitness level, and determine the best approach for your journey.</p>
+                        <div class="service-selection-meta">
+                            <span><i class="far fa-clock"></i> 30 minutes</span>
+                            <span><i class="fas fa-tag"></i> Free</span>
+                        </div>
+                        <button class="btn btn-outline-primary service-select-btn" data-service="consultation">Select</button>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-selection-card">
+                        <div class="service-selection-icon">
+                            <i class="fas fa-dumbbell"></i>
+                        </div>
+                        <h3>Personal Training</h3>
+                        <p>A one-on-one training session tailored to your specific needs, focusing on proper form and technique to maximize results.</p>
+                        <div class="service-selection-meta">
+                            <span><i class="far fa-clock"></i> 60 minutes</span>
+                            <span><i class="fas fa-tag"></i> $75</span>
+                        </div>
+                        <button class="btn btn-outline-primary service-select-btn" data-service="training">Select</button>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mx-auto" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-selection-card">
+                        <div class="service-selection-icon">
+                            <i class="fas fa-apple-alt"></i>
+                        </div>
+                        <h3>Nutrition Coaching</h3>
+                        <p>A detailed session focused on creating a personalized nutrition plan that complements your fitness routine and lifestyle.</p>
+                        <div class="service-selection-meta">
+                            <span><i class="far fa-clock"></i> 45 minutes</span>
+                            <span><i class="fas fa-tag"></i> $60</span>
+                        </div>
+                        <button class="btn btn-outline-primary service-select-btn" data-service="nutrition">Select</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calendar Section -->
+    <section class="calendar-section py-5" id="calendarSection">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-subtitle">Pick a Date & Time</span>
+                <h2 class="section-title">Schedule Your Session</h2>
+                <p class="section-description mx-auto">Choose a convenient time slot from our available options</p>
+            </div>
+            
+            <div class="row mt-5">
+                <div class="col-lg-10 mx-auto">
+                    <div class="calendar-container" data-aos="fade-up">
+                        <!-- Calendly inline widget placeholder -->
+                        <div class="calendly-placeholder">
+                            <div class="calendar-mock">
+                                <div class="calendar-header">
+                                    <button class="calendar-nav-btn"><i class="fas fa-chevron-left"></i></button>
+                                    <h4 class="calendar-month">June 2025</h4>
+                                    <button class="calendar-nav-btn"><i class="fas fa-chevron-right"></i></button>
+                                </div>
+                                <div class="calendar-weekdays">
+                                    <div>Sun</div>
+                                    <div>Mon</div>
+                                    <div>Tue</div>
+                                    <div>Wed</div>
+                                    <div>Thu</div>
+                                    <div>Fri</div>
+                                    <div>Sat</div>
+                                </div>
+                                <div class="calendar-days">
+                                    <div class="prev-month">28</div>
+                                    <div class="prev-month">29</div>
+                                    <div class="prev-month">30</div>
+                                    <div class="prev-month">31</div>
+                                    <div>1</div>
+                                    <div>2</div>
+                                    <div>3</div>
+                                    <div>4</div>
+                                    <div>5</div>
+                                    <div>6</div>
+                                    <div>7</div>
+                                    <div>8</div>
+                                    <div>9</div>
+                                    <div>10</div>
+                                    <div>11</div>
+                                    <div>12</div>
+                                    <div>13</div>
+                                    <div>14</div>
+                                    <div class="available">15</div>
+                                    <div class="available">16</div>
+                                    <div class="available">17</div>
+                                    <div class="available">18</div>
+                                    <div class="available">19</div>
+                                    <div class="available">20</div>
+                                    <div class="available">21</div>
+                                    <div class="available">22</div>
+                                    <div class="available">23</div>
+                                    <div class="available">24</div>
+                                    <div class="available">25</div>
+                                    <div class="available">26</div>
+                                    <div class="available">27</div>
+                                    <div class="available">28</div>
+                                    <div class="available">29</div>
+                                    <div class="available">30</div>
+                                    <div class="next-month">1</div>
+                                    <div class="next-month">2</div>
+                                    <div class="next-month">3</div>
+                                    <div class="next-month">4</div>
+                                    <div class="next-month">5</div>
+                                </div>
+                                <div class="time-slots">
+                                    <h5>Available Times for June 15, 2025</h5>
+                                    <div class="time-slot-grid">
+                                        <div class="time-slot">9:00 AM</div>
+                                        <div class="time-slot">10:00 AM</div>
+                                        <div class="time-slot">11:00 AM</div>
+                                        <div class="time-slot">1:00 PM</div>
+                                        <div class="time-slot">2:00 PM</div>
+                                        <div class="time-slot">3:00 PM</div>
+                                        <div class="time-slot">4:00 PM</div>
+                                        <div class="time-slot">5:00 PM</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="calendly-info">
+                                <p class="text-center">This is a placeholder for the Calendly booking system. In the live version, you'll be able to select dates and times from our real availability.</p>
+                                <div class="text-center mt-4">
+                                    <button id="bookSessionBtn" class="btn btn-primary btn-lg btn-pulse">Book Your Session</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Success Modal -->
+    <div class="modal fade" id="bookingSuccessModal" tabindex="-1" aria-labelledby="bookingSuccessModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center py-4">
+                    <div class="success-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3 class="modal-title mt-4" id="bookingSuccessModalLabel">Booking Confirmed!</h3>
+                    <p class="lead">Your session has been successfully scheduled.</p>
+                    <div class="booking-details mt-4">
+                        <div class="booking-detail-item">
+                            <i class="fas fa-calendar-check"></i>
+                            <span id="bookingDate">June 15, 2025</span>
+                        </div>
+                        <div class="booking-detail-item">
+                            <i class="far fa-clock"></i>
+                            <span id="bookingTime">10:00 AM</span>
+                        </div>
+                        <div class="booking-detail-item">
+                            <i class="fas fa-dumbbell"></i>
+                            <span id="bookingService">Personal Training</span>
+                        </div>
+                    </div>
+                    <p class="mt-4">A confirmation email has been sent to your inbox with all the details.</p>
+                </div>
+                <div class="modal-footer border-0 justify-content-center pb-4">
+                    <button type="button" class="btn btn-outline-primary" data-bs-dismiss="modal">Close</button>
+                    <a href="index.html" class="btn btn-primary">Return to Home</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <section class="booking-faq-section py-5 bg-light">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-subtitle">Common Questions</span>
+                <h2 class="section-title">Booking FAQs</h2>
+                <p class="section-description mx-auto">Find answers to frequently asked questions about our booking process</p>
+            </div>
+            
+            <div class="row mt-5">
+                <div class="col-lg-8 mx-auto">
+                    <div class="accordion" id="bookingFAQ">
+                        <!-- FAQ Item 1 -->
+                        <div class="accordion-item" data-aos="fade-up" data-aos-delay="100">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqOne" aria-expanded="true" aria-controls="faqOne">
+                                    How far in advance should I book my session?
+                                </button>
+                            </h2>
+                            <div id="faqOne" class="accordion-collapse collapse show" data-bs-parent="#bookingFAQ">
+                                <div class="accordion-body">
+                                    <p>We recommend booking at least 48 hours in advance to ensure you get your preferred time slot. However, we sometimes have same-day availability, so it's always worth checking the calendar if you need a last-minute session.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- FAQ Item 2 -->
+                        <div class="accordion-item" data-aos="fade-up" data-aos-delay="200">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqTwo" aria-expanded="false" aria-controls="faqTwo">
+                                    What is your cancellation policy?
+                                </button>
+                            </h2>
+                            <div id="faqTwo" class="accordion-collapse collapse" data-bs-parent="#bookingFAQ">
+                                <div class="accordion-body">
+                                    <p>You can cancel or reschedule your appointment up to 24 hours before your scheduled session without any charge. Cancellations made less than 24 hours in advance may be subject to a cancellation fee of 50% of the session cost.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- FAQ Item 3 -->
+                        <div class="accordion-item" data-aos="fade-up" data-aos-delay="300">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqThree" aria-expanded="false" aria-controls="faqThree">
+                                    How do I prepare for my first session?
+                                </button>
+                            </h2>
+                            <div id="faqThree" class="accordion-collapse collapse" data-bs-parent="#bookingFAQ">
+                                <div class="accordion-body">
+                                    <p>For your first session, please arrive 10-15 minutes early to complete any necessary paperwork. Wear comfortable workout clothes and athletic shoes. Bring a water bottle, a small towel, and any relevant medical information or fitness history that might be helpful for your coach.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- FAQ Item 4 -->
+                        <div class="accordion-item" data-aos="fade-up" data-aos-delay="400">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqFour" aria-expanded="false" aria-controls="faqFour">
+                                    Can I request a specific coach?
+                                </button>
+                            </h2>
+                            <div id="faqFour" class="accordion-collapse collapse" data-bs-parent="#bookingFAQ">
+                                <div class="accordion-body">
+                                    <p>Yes, you can request a specific coach when booking your session. Each coach has their own calendar of availability, which you can view by selecting their name from the dropdown menu in the booking system.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- FAQ Item 5 -->
+                        <div class="accordion-item" data-aos="fade-up" data-aos-delay="500">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqFive" aria-expanded="false" aria-controls="faqFive">
+                                    Do I need to pay when booking?
+                                </button>
+                            </h2>
+                            <div id="faqFive" class="accordion-collapse collapse" data-bs-parent="#bookingFAQ">
+                                <div class="accordion-body">
+                                    <p>For first-time clients, we require a credit card to hold your appointment, but you won't be charged until after your session. For returning clients, you can choose to pay at the time of booking or after your session. We accept all major credit cards, cash, and digital payment methods.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section py-5">
+        <div class="container">
+            <div class="cta-content" data-aos="fade-up">
+                <div class="row align-items-center">
+                    <div class="col-lg-8 mb-4 mb-lg-0">
+                        <h2>Not Sure Which Service to Choose?</h2>
+                        <p class="lead mb-0">Schedule a free 15-minute phone consultation to discuss your needs and goals.</p>
+                    </div>
+                    <div class="col-lg-4 text-lg-end">
+                        <a href="#calendarSection" class="btn btn-lg btn-light btn-glow">Get Free Consultation</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <div class="footer-brand">
+                        <span class="brand-text">FitLife</span>
+                        <span class="brand-accent">Coach</span>
+                    </div>
+                    <p>Transforming lives through personalized fitness and wellness coaching. Your journey to a better you starts here.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-2 mb-4 mb-md-0">
+                    <h5>Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="testimonials.html">Testimonials</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 col-lg-2 mb-4 mb-md-0">
+                    <h5>Services</h5>
+                    <ul class="footer-links">
+                        <li><a href="services.html">Personal Training</a></li>
+                        <li><a href="services.html">Nutrition Coaching</a></li>
+                        <li><a href="services.html">Lifestyle Coaching</a></li>
+                        <li><a href="services.html">Group Classes</a></li>
+                        <li><a href="services.html">Online Coaching</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 col-lg-4">
+                    <h5>Contact Us</h5>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Fitness Street, Wellness City</li>
+                        <li><i class="fas fa-phone"></i> (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> info@fitlifecoach.com</li>
+                        <li><i class="fas fa-clock"></i> Mon-Fri: 6am-8pm, Sat: 8am-4pm</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">&copy; 2025 FitLife Coach. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <a href="privacy.html" class="text-decoration-none me-3">Privacy Policy</a>
+                    <a href="terms.html" class="text-decoration-none">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery for additional functionality -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <!-- AOS JS for scroll animations -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+</body>
+</html>
